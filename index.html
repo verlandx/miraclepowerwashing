@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miracle Powerwashing | Premium Exterior Cleaning</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-main: #0B0E14;
+            --bg-card: #131722;
+            --bg-nav: rgba(11, 14, 20, 0.85);
+            --accent-blue: #FF3333;
+            --accent-glow: rgba(255, 51, 51, 0.3);
+            --text-main: #F5F7FA;
+            --text-muted: #8A94A6;
+            --border-color: #1E2538;
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: var(--font-family);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-main);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-blue);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--bg-nav);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-main);
+        }
+
+        .logo span {
+            color: var(--accent-blue);
+            text-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-blue);
+            text-shadow: 0 0 8px var(--accent-glow);
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 1rem;
+            background: linear-gradient(180deg, rgba(11,14,20,0.85) 0%, rgba(11,14,20,1) 100%);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 51, 51, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+
+        .hero-logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 20px rgba(255, 51, 51, 0.2));
+        }
+
+        .hero-badge {
+            background: rgba(255, 51, 51, 0.1);
+            border: 1px solid var(--accent-blue);
+            color: var(--accent-blue);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--accent-blue);
+            text-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: var(--accent-blue);
+            color: var(--text-main);
+            box-shadow: 0 4px 15px var(--accent-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 51, 51, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-blue);
+            background: rgba(255, 51, 51, 0.05);
+        }
+
+        .socials-hero-bar {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .social-hero-icon {
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-hero-icon:hover {
+            color: var(--accent-blue);
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 8px var(--accent-glow));
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header h2 span {
+            color: var(--accent-blue);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .services-section {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .tabs-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .tab-btn {
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn:hover, .tab-btn.active {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        .services-grid {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .services-grid.active {
+            display: grid;
+        }
+
+        .service-card {
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .service-card i {
+            color: var(--accent-blue);
+            font-size: 1.2rem;
+            background: rgba(255, 51, 51, 0.1);
+            padding: 0.7rem;
+            border-radius: 6px;
+        }
+
+        .service-card span {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .showcase-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .showcase-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .showcase-info {
+            grid-column: span 2;
+            margin-bottom: -1rem;
+        }
+
+        .showcase-info h3 {
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            color: var(--accent-blue);
+        }
+
+        .img-wrapper {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            aspect-ratio: 4 / 3;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .img-wrapper:hover img {
+            transform: scale(1.03);
+        }
+
+        .img-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(0, 0, 0, 0.75);
+            padding: 0.3rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            backdrop-filter: blur(4px);
+            z-index: 5;
+        }
+
+        .img-badge.before { border-left: 3px solid #FF3333; }
+        .img-badge.after { border-left: 3px solid #2AD165; }
+
+        .team-section {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-card {
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-5px);
+        }
+
+        .team-card:hover::before {
+            background: var(--accent-blue);
+            box-shadow: 0 0 10px var(--accent-blue);
+        }
+
+        .avatar-placeholder {
+            width: 90px;
+            height: 90px;
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--text-muted);
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover .avatar-placeholder {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .team-card h3 {
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+
+        .rank-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            padding: 0.2rem 0.8rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .team-card:nth-child(1) .rank-tag { border-color: var(--accent-blue); color: var(--accent-blue); background: rgba(255, 51, 51, 0.05); }
+        .team-card:nth-child(2) .rank-tag { border-color: #E2B13C; color: #E2B13C; background: rgba(226, 177, 60, 0.05); }
+        .team-card:nth-child(3) .rank-tag { border-color: #00A3FF; color: #00A3FF; background: rgba(0, 163, 255, 0.05); }
+
+        .roles-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .role-pill {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-radius: 6px;
+        }
+
+        footer {
+            background: #07090D;
+            border-top: 1px solid var(--border-color);
+            padding: 5rem 2rem 2rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-brand h3 span { color: var(--accent-blue); }
+        .footer-brand p { color: var(--text-muted); max-width: 400px; font-size: 0.95rem; }
+
+        .footer-heading {
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .widget-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 7, 10, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .widget-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .widget-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-top: 4px solid var(--accent-blue);
+            padding: 2.5rem;
+            border-radius: 8px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+        }
+
+        .widget-overlay.active .widget-card {
+            transform: translateY(0);
+        }
+
+        .widget-icon {
+            font-size: 2.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 1.2rem;
+            text-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .widget-card h3 {
+            text-transform: uppercase;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .widget-card p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .widget-card p a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px dashed var(--accent-blue);
+            transition: color 0.3s ease;
+        }
+
+        .widget-card p a:hover {
+            color: var(--accent-blue);
+        }
+
+        .widget-close {
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.6rem 2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 4px;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .widget-close:hover {
+            border: 1px solid var(--accent-blue);
+            color: var(--accent-blue);
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        @media (max-width: 900px) {
+            .showcase-item { grid-template-columns: 1fr; }
+            .showcase-info { grid-column: span 1; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .hero h1 { font-size: 2.8rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="https://media.discordapp.net/attachments/1505051672614011032/1506412956773122139/mps_-_Edited.png?ex=6a0e2be4&is=6a0cda64&hm=84a11fc19c42203b0c404698d9bad472885109e0902fc6f5e2cf44c8a87fe557&=&format=webp&quality=lossless" alt="Miracle Powerwashing Logo" class="logo-img">
+                <div class="logo">Miracle <span>Powerwashing</span></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#showcase">Showcase</a></li>
+                <li><a href="#team">Roster</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <img src="https://media.discordapp.net/attachments/1505051672614011032/1506412956773122139/mps_-_Edited.png?ex=6a0e2be4&is=6a0cda64&hm=84a11fc19c42203b0c404698d9bad472885109e0902fc6f5e2cf44c8a87fe557&=&format=webp&quality=lossless" alt="Miracle Powerwashing Logo" class="hero-logo">
+            <div></div>
+            <div class="hero-badge"><i class="fa-solid fa-tag"></i> Estimates Are 100% Free</div>
+            <h1>Making Properties Look <span>Miraculous</span></h1>
+            <p>An owner-operated fleet operating on a "Customer First" motto. We take immense pride in restoring and maintaining your most prized possessions.</p>
+            <div class="cta-group">
+                <button class="btn btn-primary" onclick="openWidget()">Get Free Estimate</button>
+                <a href="#services" class="btn btn-secondary">View Services</a>
+            </div>
+            <div class="socials-hero-bar">
+                <a href="https://www.facebook.com/miraclepowerwashing123" target="_blank" class="social-hero-icon"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/miraclepowerwashing/" target="_blank" class="social-hero-icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@miraclepowerwashing" target="_blank" class="social-hero-icon"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" id="services">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Our <span>Services</span></h2>
+                <p>High-caliber, tactical cleaning solutions deployed across various fields</p>
+            </div>
+
+            <div class="tabs-container">
+                <button class="tab-btn active" onclick="switchTab(event, 'residential')">Residential</button>
+                <button class="tab-btn" onclick="switchTab(event, 'commercial')">Commercial</button>
+            </div>
+
+            <div class="services-grid active" id="residential">
+                <div class="service-card"><i class="fa-solid fa-house"></i><span>Homes</span></div>
+                <div class="service-card"><i class="fa-solid fa-border-all"></i><span>Fences</span></div>
+                <div class="service-card"><i class="fa-solid fa-couch"></i><span>Outdoor Furniture</span></div>
+                <div class="service-card"><i class="fa-solid fa-umbrella-beach"></i><span>Patio Areas</span></div>
+                <div class="service-card"><i class="fa-solid fa-cubes"></i><span>Brick</span></div>
+                <div class="service-card"><i class="fa-solid fa-spray-can"></i><span>Graffiti Removal</span></div>
+                <div class="service-card"><i class="fa-solid fa-layer-group"></i><span>Decks</span></div>
+                <div class="service-card"><i class="fa-solid fa-warehouse"></i><span>Garages</span></div>
+                <div class="service-card"><i class="fa-solid fa-ship"></i><span>Boats</span></div>
+                <div class="service-card"><i class="fa-solid fa-caravan"></i><span>RV Trailers</span></div>
+                <div class="service-card"><i class="fa-solid fa-person-swimming"></i><span>Pool Areas</span></div>
+                <div class="service-card"><i class="fa-solid fa-trowel-bricks"></i><span>Concrete</span></div>
+                <div class="service-card"><i class="fa-solid fa-building"></i><span>Vinyl Siding</span></div>
+                <div class="service-card"><i class="fa-solid fa-car"></i><span>Driveways</span></div>
+                <div class="service-card"><i class="fa-solid fa-gopuram"></i><span>Gutters</span></div>
+                <div class="service-card"><i class="fa-solid fa-road"></i><span>Sidewalks</span></div>
+                <div class="service-card"><i class="fa-solid fa-child"></i><span>Playground Equip.</span></div>
+                <div class="service-card"><i class="fa-solid fa-bug"></i><span>Algae Removal</span></div>
+            </div>
+
+            <div class="services-grid" id="commercial">
+                <div class="service-card"><i class="fa-solid fa-city"></i><span>Commercial Properties</span></div>
+                <div class="service-card"><i class="fa-solid fa-utensils"></i><span>Restaurants</span></div>
+                <div class="service-card"><i class="fa-solid fa-truck-monster"></i><span>Heavy Equipment</span></div>
+                <div class="service-card"><i class="fa-solid fa-square-parking"></i><span>Parking Lots</span></div>
+                <div class="service-card"><i class="fa-solid fa-trash-can"></i><span>Trash Chutes</span></div>
+                <div class="service-card"><i class="fa-solid fa-building-user"></i><span>Office Buildings</span></div>
+                <div class="service-card"><i class="fa-solid fa-cart-shopping"></i><span>Shopping Carts</span></div>
+                <div class="service-card"><i class="fa-solid fa-door-open"></i><span>Store Entrances</span></div>
+                <div class="service-card"><i class="fa-solid fa-road"></i><span>Curbing & Sidewalks</span></div>
+                <div class="service-card"><i class="fa-solid fa-shop"></i><span>Retail Establishments</span></div>
+                <div class="service-card"><i class="fa-solid fa-truck-ramp-box"></i><span>Fleet Vehicles</span></div>
+                <div class="service-card"><i class="fa-solid fa-map-pin"></i><span>Entrance Signs</span></div>
+                <div class="service-card"><i class="fa-solid fa-door-closed"></i><span>Garage Bay Doors</span></div>
+                <div class="service-card"><i class="fa-solid fa-eye-dropper"></i><span>Gum Removal</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="showcase">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Field <span>Showcase</span></h2>
+                <p>Before and after results demonstrating high-pressure restoration operations</p>
+            </div>
+
+            <div class="showcase-grid">
+                <div class="showcase-item">
+                    <div class="showcase-info">
+                        <h3>Vinyl Siding Wash</h3>
+                    </div>
+                    <div class="img-wrapper">
+                        <div class="img-badge before">Before Cleanup</div>
+                        <img src="https://images-ext-1.discordapp.net/external/S9_CgW2kCyHzQwFBNNKh_ciAXR360aoYrcktIsq9atA/https/miraclepowerwashing.com/images/mold-on-siding-of-house-in-south-county-maryland-pressure-washing.png?format=webp&quality=lossless" alt="Vinyl Siding Before">
+                    </div>
+                    <div class="img-wrapper">
+                        <div class="img-badge after">After Operations</div>
+                        <img src="https://media.discordapp.net/attachments/1505051672614011032/1506415767254732843/mold-washed-vinyl-siding-house-south-county-md-pressure-washing.png?ex=6a0e2e82&is=6a0cdd02&hm=559cdc346996dfbb5a319e87fdd0fdc9db79528b18d39b2b76f1bd9b69cf2f82&=&format=webp&quality=lossless" alt="Vinyl Siding After">
+                    </div>
+                </div>
+
+                <div class="showcase-item">
+                    <div class="showcase-info">
+                        <h3>Diving Board Restoration</h3>
+                    </div>
+                    <div class="img-wrapper">
+                        <div class="img-badge before">Before Cleanup</div>
+                        <img src="https://media.discordapp.net/attachments/1505051672614011032/1506408999799754853/diving-board-needs-cleaning-pool-md.png?ex=6a0e2835&is=6a0cd6b5&hm=b6287d107ca41609f3464b1b82419b6f01a93ef41547cc8af0a2c306ca4185d0&=&format=webp&quality=lossless" alt="Diving Board Before">
+                    </div>
+                    <div class="img-wrapper">
+                        <div class="img-badge after">After Operations</div>
+                        <img src="https://media.discordapp.net/attachments/1505051672614011032/1506409038999588905/diving-board-cleaned-pool-md.png?ex=6a0e283e&is=6a0cd6be&hm=37746ca6cae3b6747f572865652cdf99fdadd88735347b215884bc41fae85696&=&format=webp&quality=lossless" alt="Diving Board After">
+                    </div>
+                </div>
+
+                <div class="showcase-item">
+                    <div class="showcase-info">
+                        <h3>Brick Steps Deep Clean</h3>
+                    </div>
+                    <div class="img-wrapper">
+                        <div class="img-badge before">Before Cleanup</div>
+                        <img src="https://media.discordapp.net/attachments/1505051672614011032/1506409084155596988/brick-steps-need-cleaning-west-river-md.png?ex=6a0e2849&is=6a0cd6c9&hm=160696df8272d3afdbc36adb2469254ec8b59d146b246bf7121c5ed19d6e5060&=&format=webp&quality=lossless" alt="Brick Steps Before">
+                    </div>
+                    <div class="img-wrapper">
+                        <div class="img-badge after">After Operations</div>
+                        <img src="https://media.discordapp.net/attachments/1505051672614011032/1506409140829028482/brick-house-cleaning-steps-west-river-md.png?ex=6a0e2856&is=6a0cd6d6&hm=2ba6820e3c7828c89176b4bf4e1e457f74f898c00b803300e112a821d39ca312&=&format=webp&quality=lossless&width=264&height=350" alt="Brick Steps After">
+                    </div>
+                </div>
+
+                <div class="showcase-item">
+                    <div class="showcase-info">
+                        <h3>Vinyl Fence Algae Removal</h3>
+                    </div>
+                    <div class="img-wrapper">
+                        <div class="img-badge before">Before Cleanup</div>
+                        <img src="https://media.discordapp.net/attachments/1505051672614011032/1506409293707088053/vinyl-fence-with-algae-upper-marlboro.png?ex=6a0e287b&is=6a0cd6fb&hm=af2538d81fcb2240d6cf2d344c7d5f62f4ef5164784b08a764c7dc33dd2e5eb7&=&format=webp&quality=lossless" alt="Fence Before">
+                    </div>
+                    <div class="img-wrapper">
+                        <div class="img-badge after">After Operations</div>
+                        <img src="https://media.discordapp.net/attachments/1505051672614011032/1506409301218955404/vinyl-fence-no-algae-upper-marlboro-md-pressure-washing.png?ex=6a0e287d&is=6a0cd6fd&hm=fe45bc5d1706b497891c7ea60ed5538fc38294840e506f8125afa04c0c36abc2&=&format=webp&quality=lossless" alt="Fence After">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section" id="team">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Company <span>Roster</span></h2>
+                <p>The specialized crew leading operations and client management</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="avatar-placeholder"><i class="fa-solid fa-user-shield"></i></div>
+                    <h3>Jason Smith</h3>
+                    <div class="rank-tag">Owner / Operator</div>
+                    <div class="roles-list">
+                        <div class="role-pill">Field Logistics Operations</div>
+                        <div class="role-pill">Quality Control Assurance</div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="avatar-placeholder"><i class="fa-solid fa-user-tie"></i></div>
+                    <h3>Kim Smith</h3>
+                    <div class="rank-tag">Administrative Lead</div>
+                    <div class="roles-list">
+                        <div class="role-pill">Scheduling Coordination</div>
+                        <div class="role-pill">Corporate Communications</div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="avatar-placeholder"><i class="fa-solid fa-user-gear"></i></div>
+                    <h3>Keon Smith</h3>
+                    <div class="rank-tag">Junior Specialist</div>
+                    <div class="roles-list">
+                        <div class="role-pill">Junior Powerwasher</div>
+                        <div class="role-pill">Social Media Coordinator</div>
+                        <div class="role-pill">Marketing & Promotions Director</div>
+                        <div class="role-pill">Lead Website Developer</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>
+                    <img src="https://media.discordapp.net/attachments/1505051672614011032/1506412956773122139/mps_-_Edited.png?ex=6a0e2be4&is=6a0cda64&hm=84a11fc19c42203b0c404698d9bad472885109e0902fc6f5e2cf44c8a87fe557&=&format=webp&quality=lossless" alt="Miracle Logo" style="height: 30px; width: auto; object-fit: contain;">
+                    Miracle <span>Powerwashing</span>
+                </h3>
+                <p>Miracle Powerwashing operates with a "Customer First" motto. We handle structural restoration, fleet sanitation, and premium cosmetic deep cleans across municipal and residential sectors. All initial project estimates are free of cost.</p>
+            </div>
+            <div>
+                <h4 class="footer-heading">Secure Lines</h4>
+                <ul class="footer-links">
+                    <li><a href="tel:443-822-1293"><i class="fa-solid fa-phone"></i> 443-822-1293</a></li>
+                    <li><a href="mailto:jason@miraclepowerwashing.com"><i class="fa-solid fa-envelope"></i> Email Support</a></li>
+                    <li><span style="color: var(--text-muted); font-size: 0.95rem;"><i class="fa-solid fa-server" style="color: var(--accent-blue); margin-right:8px;"></i> Host: IONOS</span></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-heading">Social Feeds</h4>
+                <ul class="footer-links">
+                    <li><a href="https://www.facebook.com/miraclepowerwashing123" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com/miraclepowerwashing/" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://www.tiktok.com/@miraclepowerwashing" target="_blank"><i class="fa-brands fa-tiktok"></i> TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Miracle Powerwashing. All Rights Reserved.</p>
+            <p>Designed by Keon Smith</p>
+        </div>
+    </footer>
+
+    <div class="widget-overlay" id="estimateWidget" onclick="closeWidgetOutside(event)">
+        <div class="widget-card">
+            <div class="widget-icon"><i class="fa-solid fa-phone-volume"></i></div>
+            <h3>Free Estimate Request</h3>
+            <p>If you would like to recieve a free estimate, make a call to <a href="tel:443-822-1293">443-822-1293</a>.</p>
+            <button class="widget-close" onclick="closeWidget()">Dismiss</button>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(event, tabId) {
+            var grids = document.querySelectorAll('.services-grid');
+            grids.forEach(function(grid) {
+                grid.classList.remove('active');
+            });
+            
+            var buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+            
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        window.addEventListener('scroll', function() {
+            var current = '';
+            var sections = document.querySelectorAll('section, footer');
+            var navLinks = document.querySelectorAll('.nav-links a');
+            
+            sections.forEach(function(section) {
+                var sectionTop = section.offsetTop;
+                var sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(function(a) {
+                a.classList.remove('active');
+                if (a.getAttribute('href').includes(current)) {
+                    a.classList.add('active');
+                }
+            });
+        });
+
+        function openWidget() {
+            document.getElementById('estimateWidget').classList.add('active');
+        }
+
+        function closeWidget() {
+            document.getElementById('estimateWidget').classList.remove('active');
+        }
+
+        function closeWidgetOutside(event) {
+            if (event.target.id === 'estimateWidget') {
+                closeWidget();
+            }
+        }
+    </script>
+</body>
+</html>
