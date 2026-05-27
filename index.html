@@ -680,6 +680,18 @@
             box-shadow: 0 0 10px var(--accent-glow);
         }
 
+        /* --- SCROLL FADE ANIMATION STYLES --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         @media (max-width: 900px) {
             .showcase-item { grid-template-columns: 1fr; }
             .showcase-info { grid-column: span 1; }
@@ -694,7 +706,7 @@
     <header>
         <div class="nav-container">
             <div class="logo-container">
-                <img src="https://media.discordapp.net/attachments/1505051672614011032/1506412956773122139/mps_-_Edited.png?ex=6a0e2be4&is=6a0cda64&hm=84a11fc19c42203b0c404698d9bad472885109e0902fc6f5e2cf44c8a87fe557&=&format=webp&quality=lossless" alt="Miracle Powerwashing Logo" class="logo-img">
+                <img src="mps.png" alt="Miracle Powerwashing Logo" class="logo-img">
                 <div class="logo">Miracle <span>Powerwashing</span></div>
             </div>
             <ul class="nav-links">
@@ -709,7 +721,7 @@
 
     <section class="hero" id="home">
         <div class="hero-content">
-            <img src="https://media.discordapp.net/attachments/1505051672614011032/1506412956773122139/mps_-_Edited.png?ex=6a0e2be4&is=6a0cda64&hm=84a11fc19c42203b0c404698d9bad472885109e0902fc6f5e2cf44c8a87fe557&=&format=webp&quality=lossless" alt="Miracle Powerwashing Logo" class="hero-logo">
+            <img src="mps.png" alt="Miracle Powerwashing Logo" class="hero-logo">
             <div></div>
             <div class="hero-badge"><i class="fa-solid fa-tag"></i> Estimates Are 100% Free</div>
             <h1>Making Properties Look <span>Miraculous</span></h1>
@@ -726,7 +738,7 @@
         </div>
     </section>
 
-    <section class="services-section" id="services">
+    <section class="services-section reveal" id="services">
         <div class="section-container">
             <div class="section-header">
                 <h2>Our <span>Services</span></h2>
@@ -778,7 +790,7 @@
         </div>
     </section>
 
-    <section id="showcase">
+    <section id="showcase" class="reveal">
         <div class="section-container">
             <div class="section-header">
                 <h2>Field <span>Showcase</span></h2>
@@ -806,11 +818,11 @@
                     </div>
                     <div class="img-wrapper">
                         <div class="img-badge before">Before Cleanup</div>
-                        <img src="https://media.discordapp.net/attachments/1505051672614011032/1506408999799754853/diving-board-needs-cleaning-pool-md.png?ex=6a0e2835&is=6a0cd6b5&hm=b6287d107ca41609f3464b1b82419b6f01a93ef41547cc8af0a2c306ca4185d0&=&format=webp&quality=lossless" alt="Diving Board Before">
+                        <img src="divingboardbefore.png" alt="Diving Board Before">
                     </div>
                     <div class="img-wrapper">
                         <div class="img-badge after">After Operations</div>
-                        <img src="https://media.discordapp.net/attachments/1505051672614011032/1506409038999588905/diving-board-cleaned-pool-md.png?ex=6a0e283e&is=6a0cd6be&hm=37746ca6cae3b6747f572865652cdf99fdadd88735347b215884bc41fae85696&=&format=webp&quality=lossless" alt="Diving Board After">
+                        <img src="divingboardafter.png" alt="Diving Board After">
                     </div>
                 </div>
 
@@ -820,11 +832,11 @@
                     </div>
                     <div class="img-wrapper">
                         <div class="img-badge before">Before Cleanup</div>
-                        <img src="https://media.discordapp.net/attachments/1505051672614011032/1506409084155596988/brick-steps-need-cleaning-west-river-md.png?ex=6a0e2849&is=6a0cd6c9&hm=160696df8272d3afdbc36adb2469254ec8b59d146b246bf7121c5ed19d6e5060&=&format=webp&quality=lossless" alt="Brick Steps Before">
+                        <img src="bricksbefore.png" alt="Brick Steps Before">
                     </div>
                     <div class="img-wrapper">
                         <div class="img-badge after">After Operations</div>
-                        <img src="https://media.discordapp.net/attachments/1505051672614011032/1506409140829028482/brick-house-cleaning-steps-west-river-md.png?ex=6a0e2856&is=6a0cd6d6&hm=2ba6820e3c7828c89176b4bf4e1e457f74f898c00b803300e112a821d39ca312&=&format=webp&quality=lossless&width=264&height=350" alt="Brick Steps After">
+                        <img src="bricksafter.png" alt="Brick Steps After">
                     </div>
                 </div>
 
@@ -834,18 +846,18 @@
                     </div>
                     <div class="img-wrapper">
                         <div class="img-badge before">Before Cleanup</div>
-                        <img src="https://media.discordapp.net/attachments/1505051672614011032/1506409293707088053/vinyl-fence-with-algae-upper-marlboro.png?ex=6a0e287b&is=6a0cd6fb&hm=af2538d81fcb2240d6cf2d344c7d5f62f4ef5164784b08a764c7dc33dd2e5eb7&=&format=webp&quality=lossless" alt="Fence Before">
+                        <img src="fencebefore.png" alt="Fence Before">
                     </div>
                     <div class="img-wrapper">
                         <div class="img-badge after">After Operations</div>
-                        <img src="https://media.discordapp.net/attachments/1505051672614011032/1506409301218955404/vinyl-fence-no-algae-upper-marlboro-md-pressure-washing.png?ex=6a0e287d&is=6a0cd6fd&hm=fe45bc5d1706b497891c7ea60ed5538fc38294840e506f8125afa04c0c36abc2&=&format=webp&quality=lossless" alt="Fence After">
+                        <img src="fenceafter.png" alt="Fence After">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="team-section" id="team">
+    <section class="team-section reveal" id="team">
         <div class="section-container">
             <div class="section-header">
                 <h2>Company <span>Roster</span></h2>
@@ -888,11 +900,11 @@
         </div>
     </section>
 
-    <footer id="contact">
+    <footer id="contact" class="reveal">
         <div class="footer-grid">
             <div class="footer-brand">
                 <h3>
-                    <img src="https://media.discordapp.net/attachments/1505051672614011032/1506412956773122139/mps_-_Edited.png?ex=6a0e2be4&is=6a0cda64&hm=84a11fc19c42203b0c404698d9bad472885109e0902fc6f5e2cf44c8a87fe557&=&format=webp&quality=lossless" alt="Miracle Logo" style="height: 30px; width: auto; object-fit: contain;">
+                    <img src="mps.png" alt="Miracle Logo" style="height: 30px; width: auto; object-fit: contain;">
                     Miracle <span>Powerwashing</span>
                 </h3>
                 <p>Miracle Powerwashing operates with a "Customer First" motto. We handle structural restoration, fleet sanitation, and premium cosmetic deep cleans across municipal and residential sectors. All initial project estimates are free of cost.</p>
@@ -945,11 +957,13 @@
             event.currentTarget.classList.add('active');
         }
 
-        window.addEventListener('scroll', function() {
+        function handleScrollEffects() {
             var current = '';
             var sections = document.querySelectorAll('section, footer');
             var navLinks = document.querySelectorAll('.nav-links a');
-            
+            var reveals = document.querySelectorAll('.reveal');
+            var windowHeight = window.innerHeight;
+
             sections.forEach(function(section) {
                 var sectionTop = section.offsetTop;
                 var sectionHeight = section.clientHeight;
@@ -964,7 +978,19 @@
                     a.classList.add('active');
                 }
             });
-        });
+
+            reveals.forEach(function(revealElement) {
+                var elementTop = revealElement.getBoundingClientRect().top;
+                var elementVisibleOffset = 150;
+
+                if (elementTop < windowHeight - elementVisibleOffset) {
+                    revealElement.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScrollEffects, { passive: true });
+        window.addEventListener('DOMContentLoaded', handleScrollEffects);
 
         function openWidget() {
             document.getElementById('estimateWidget').classList.add('active');
